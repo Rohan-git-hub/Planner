@@ -1,0 +1,271 @@
+/* ------some global styling--------------- */
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+input:focus, textarea:focus, select:focus, button:focus{
+    outline: none;
+}
+#info{
+    display: flex;
+}
+.td{
+    position: relative;
+    left: 77px;
+}
+#edit-link {
+    position: relative;
+    left: 90px;
+    top: 20px;
+    color: grey;
+}
+#edit-link a{
+    color: grey;
+}
+li{
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    list-style: none;
+    margin-left: -39px;
+}
+/* ----------------Button styling---------------- */
+button{
+    border-radius: 7px;
+    height: 55px;
+    border: 0px;
+    color: white;
+    font-size: 1.5rem;
+}
+#add {
+    margin-left: 39.5%;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: grey;
+}
+#del {
+    position: absolute;
+    left: 50.1%;
+    top: 352px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: tomato;
+}
+#upid {
+    background-color: darkslategray;
+    position: absolute;
+    top: 351px;
+    left: 57.9%;
+}
+/* ---------heading---------------- */
+#heading{
+    padding: 10px;
+    background-color: darkslategray;
+    height: 50px;
+    margin-bottom: 0px;
+}
+h1{
+    margin-top: 2px;
+    text-align: center;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* -----------desription box and labels---------------- */
+div#description-box{
+    display: flex;
+    flex-direction: column;
+    border-style: double;
+    border-left: 0px;
+    border-right: 0px;
+}
+/* handling style of all labels */
+label{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+label, #description-box textarea{
+    margin-left: 25px;
+    margin-top: 7px;
+}
+/* ---------form background color handling and font-color handling------------- */
+#description-box, #category-date{
+    background-color: #cfcbcb;
+    color: white;
+}
+#description-area{
+    font-size: 1.2rem;
+    color: white;
+    background-color: transparent;
+    border: 0px;
+}
+#category-date{
+    display: flex;
+}
+#category{
+    width: 50%;
+}
+#Date{
+    color: white;
+    width: 50%;
+}
+select, #calender{
+    color: white;
+    background-color: transparent;
+    border: 0px;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 7px;
+    font-size: 1.2rem;
+}
+#category-date{
+    height: 80px;
+    border-bottom-style: double;
+    padding: 7px;
+}
+#category{
+    border-right-style: double;
+}
+option{
+    color: darkslategray;
+}
+/* capitalising the form options for selection */
+option , select{
+    text-transform: capitalize;
+}
+select{
+    color: white;
+}
+/* ----------task list in checkbox form styling------------------------------- */
+/* styling the alternating task form list elements */
+li:nth-child(2n+1){
+    background-color: rgb(228, 228, 228);
+}
+li:nth-child(2n){
+    background-color: whitesmoke;
+}
+.task-list{
+    display: flex;
+    flex-direction: row;
+}
+#check-box{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.cat-box{
+    color: white;
+    border-radius: 10px;
+    border-style: groove;
+    position: absolute;
+    font-size: 1.5rem;
+    left: 88%;
+    width: 110px;
+    text-align: center;
+    height: 85px;
+}
+#calnd{
+    color: #808080;
+}
+h3{
+    color: darkslategray;
+}
+/* -----------------hidden form styling--------------------------- */
+#hidden-form{
+    visibility: hidden;
+    top: 262px;
+    left: 13vw;
+    position: fixed;
+    width: 70vw;
+    background-color: #eaeaea;
+    box-shadow: 0px 2px 8px 0px grey;
+    transition: ease-in-out 0.2s;
+}
+#update{
+    background-color: darkslategray;
+}
+#cross{
+    margin-left: 95%;
+    background-color: transparent;
+    color: darkslategray;
+}
+#description-box-up{
+    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+}
+#category-date-up{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#category1-up{
+    color: darkslategray;
+}
+#Date-up{
+    position: absolute;
+    left: 769px;
+}
+#Date-up label{
+    margin-left: -2px;
+}
+#update{
+    margin-bottom: 20px;
+    margin-left: 40%;
+}
+/* ----------------basic media queries because app was built in 1366*786px resolution ---------- */
+@media screen and (max-height: 1080px){
+    #del {
+        position: absolute;
+        left: 50.1%;
+        top: 366px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: tomato;
+    }
+}
+@media screen and (max-width: 1920px){
+    #del {
+        position: absolute;
+        left: 50.1%;
+        top: 366px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: tomato;
+    }
+    #add {
+        margin-left: 41%;
+        margin-top: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: grey;
+    }
+}
+@media screen and (max-width: 1366px){
+    #add {
+        margin-left: 39.5%;
+        margin-top: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: grey;
+    }
+    #del {
+        position: absolute;
+        left: 50.1%;
+        top: 352px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: tomato;
+    }
+}
+@media screen and (max-height: 768px){
+    #del {
+        position: absolute;
+        left: 50.1%;
+        top: 369px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: tomato;
+    }
+    .cat-box{
+        color: white;
+        border-radius: 10px;
+        border-style: groove;
+        position: absolute;
+        font-size: 1.5rem;
+        left: 88%;
+        width: 110px;
+        text-align: center;
+        height: 90px;
+    }
+}

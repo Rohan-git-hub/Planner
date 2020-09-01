@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- sending title from server(index.js) and using ejs properties to display it -->
+    <title><%= title %></title>
+    <!-- including font-Awesome script for using font-awesome icons -->
+    <script src="https://kit.fontawesome.com/0c22d82983.js" crossorigin="anonymous"></script>
+    <!-- linking our own css file for styling -->
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div id="heading">
+        <!-- using title sent by index.js in heading of our express app -->
+        <h1><i class="fa fa-pagelines" aria-hidden="true"></i> <%= title %></h1>
+    </div>
+    <!-- add task form -->
+    <!-- ********START********* -->
+    <div>
+        <!-- giving control to /add-task controller in index.js -->
+        <form action="/add-task" method="POST">
+            <div id="description-box">
+                <label for="task">Description</label>
+                <textarea name="task" id="description-area" cols="30" rows="5" required></textarea>
+            </div>
+            <div id="category-date">
+                <div id="category">
+                    <label for="text">Category</label><br>
+                    <select id="category1" name="category" required>
+                        <option value="public">public</option>
+                        <option value="personal">personal</option>
+                        <option value="work">work</option>
+                        <option value="school">school</option>
+                        <option value="Home">cleaning</option>
+                    </select>
+                </div>
+                <div id="Date">
+                    <label for="date">Date</label><br>
+                    <input type="date" name="date" required id="calender">
+                </div>
+            </div>
+            <button type="submit" id="add"><i class="fa fa-plus" aria-hidden="true"></i> Add Task</button>
+        </form>
+    </div>
+    <!-- *************END****************** -->
+
+
+    <!-- delete/update task form and printing all tasks -->
+    <!-- *************START**************** -->
+    <div>
+        <ul>
+            <form action="/delete-task" method="POST">
+                <!-- loop for printing tasks in checkbox form -->
+                <% for(var i of todo){%>
+                        <li>
+                            <div class="task-list">
+                                <div id="check-box">
+                                    <!-- sending the object id(_id) to the server as form submit data -->
+                                    <input type="checkbox" name="id" value="<%= i._id %>">
+                                </div>
+                                <div id="info">
+                                    <div class="td">
+                                        <h3><%= i.task %></h3>
+                                        <p id="calnd"><i class="fa fa-calendar" aria-hidden="true"></i> <%= i.date %></p>
+                                    </div>
+                                    <!-- link for making update form visible and sending object id of data to index.js and storing that id into a global variable in index.js -->
+                                    <span id="edit-link"><a href="/id-update/?id=<%=i._id%>" onclick="visible()"><i class="fa fa-pencil" aria-hidden="true"></i></a></span>
+                                    <!-- div for categories box -->
+                                    <div class="cat-box">
+                                        <p class="categories"><%= i. category %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                <%}%>
+            </ul>
+            <!-- delete task form submit button -->
+            <button type="submit" id="del" name="delete" value="delete" onclick="inner()"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Task</button>
+        </form>
+        <!-- hidden update form -->
+        <div id="hidden-form">
+            <!-- button for closing update form window -->
+            <button id="cross" type="button" onclick="closeWin()"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <!-- giving control to /update-task controller -->
+            <form action="/update-task" method="POST">
+                <div id="description-box-up">
+                    <label for="taskup" id="task-up">Description</label>
+                    <textarea name="taskup" id="description-area-up" cols="30" rows="5" required ></textarea>
+                </div>
+                <div id="category-date-up">
+                    <!-- dropdown form for categories -->
+                    <div id="category-up">
+                        <label for="text">Category</label><br>
+                        <select id="category1-up" name="categoryup" required>
+                            <option value="public">public</option>
+                            <option value="personal">personal</option>
+                            <option value="work">work</option>
+                            <option value="school">school</option>
+                            <option value="Home">cleaning</option>
+                        </select>
+                    </div>
+                    <div id="Date-up">
+                        <label for="date">Date</label><br>
+                        <input type="date" name="dateup" id="calender-up" required>
+                    </div>
+                </div>
+                <button type="submit" id="update" name="update"><i class="fa fa-pencil" aria-hidden="true"></i> Update Task</button>
+            </form>
+        </div>
+    </div>
+    <!-- *************END********************* -->
+
+    <!-- linking our javascript file for making page dynamic and functional -->
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>
